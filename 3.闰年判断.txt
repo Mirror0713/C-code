@@ -1,0 +1,22 @@
+题干：判断某一年是否闰年。
+解题思路:判定闰年需满足两个条件之一：①能被4整除，但不能被100整除，②能被400整除。
+
+#include <stdio.h>
+
+int main() {
+	int YearI;
+	
+	printf("输入一个年份：");
+
+	scanf_s("%d",&YearI);
+
+	if (((YearI%4==0)&&(YearI%100!=0))||(YearI%400==0)) {
+		printf("\n%d是闰年",YearI);
+	}
+	else
+	{
+		printf("\n%d不是闰年", YearI);
+	}
+
+	return 0;
+}

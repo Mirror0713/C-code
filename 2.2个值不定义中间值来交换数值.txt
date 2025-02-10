@@ -1,0 +1,14 @@
+题干：输入两个整数x和y，不用定义其他变量，实现交换二者的值然后输出。
+
+#include <stdio.h>
+
+int main() {
+	int a,b;
+	printf("输入a和b：");
+	scanf_s("%d %d",&a,&b);
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	printf("交换后a和b的值为：%d %d",a,b);
+	return 0;
+}

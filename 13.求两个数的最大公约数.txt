@@ -1,0 +1,30 @@
+求两个数的最大公约数
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+	int n; //输入的正整数
+	int OutNumber; //存放输出值
+	int x; //存放剩余数
+
+	printf("输入一个正整数：");
+	scanf_s("%d", &n);
+
+	x = n;
+
+	for (int i = 1;; i++) {
+		OutNumber = x % 10;
+		x = x / 10;
+		printf("%d", OutNumber);
+		if (x != 0) {
+			printf(" ");
+		}
+		else {
+			break;
+		}
+	}
+
+	return 0;
+}

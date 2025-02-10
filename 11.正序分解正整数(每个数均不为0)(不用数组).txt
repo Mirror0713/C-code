@@ -1,0 +1,42 @@
+正序分解正整数
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+	int n; //输入的正整数
+	int Verse_n=0; //n倒过来的数
+	int OutNumber; //存放值
+	int x; //存放剩余数
+
+	printf("输入一个正整数：");
+	scanf_s("%d",&n);
+
+	for (int i = 0;; i++) {
+		OutNumber = n % 10;
+		n = n / 10;
+
+		Verse_n = Verse_n * 10 + OutNumber;
+
+		if (n == 0) {
+			break;
+		}
+	}
+
+	x = Verse_n;
+
+	for (int i=1;;i++) {
+		OutNumber = x %10;
+		x = x/10;
+		printf("%d",OutNumber);
+		if (x != 0) {
+			printf(" ");
+		}
+		else{
+			break;
+		}
+	}
+
+	return 0;
+}

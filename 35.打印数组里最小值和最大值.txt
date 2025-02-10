@@ -1,0 +1,34 @@
+写一个程序，输入数量不确定的[0,9]范围内的整数，统计每一种数字出现的次数，输入-1表示结束。
+
+#include <stdio.h>
+void MinMax(int x[], int length, int* min, int* max);
+
+int main(void) {
+
+	int x[] = {5,7,9,24,47,8,96,53,32,1,8}; //变量
+	int length = sizeof(x)/sizeof(x[0]);
+	int min = 0;
+	int max = 0;
+
+	MinMax(x,length,&min,&max);
+
+	for (int i=0;i<length;i++) {
+		printf("%d ", x[i]);
+	}
+	printf("\n最小值为：%d,最大值为：%d",min,max);
+
+	return 0;
+}
+
+void MinMax(int x[], int length, int* min, int* max){
+	*min = x[0];
+	*max = x[0];
+	for (int i=1;i<length;i++) {
+		if (*min>x[i]) {
+			*min = x[i];
+		}
+		if (*max < x[i]) {
+			*max = x[i];
+		}
+	}
+}

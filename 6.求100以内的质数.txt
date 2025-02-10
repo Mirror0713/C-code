@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+	int isPrime = 1; //是不是质数，初始化为1，之后能被整除则变为0
+	int count = 0; //100以内的质数数量，初始化为0
+
+	printf("一百以内质数：\n");
+
+	for (int n = 2; n <= 100; n++) { //质数从2开始
+
+		isPrime = 1;
+
+		for (int a=2;a<=sqrt(n);a++) { //若不是质数，除开1和本身，因数必定有一个小于等于数字开平方根
+			if (n%a==0)
+			{
+				isPrime = 0;
+				break;
+			}
+		}
+
+		if (isPrime == 1) {
+			count++;
+			printf("%d ", n);
+		}
+
+	}
+
+	printf("\n一百以内质数一共有%d个 \n", count);
+	return 0;
+}

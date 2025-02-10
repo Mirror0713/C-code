@@ -1,0 +1,31 @@
+写一个程序，输入数量不确定的[0,9]范围内的整数，统计每一种数字出现的次数，输入-1表示结束。
+
+#include <stdio.h>
+
+int main(void) {
+
+	int x = 0; //输入的数
+	const int number = 11; //10-20共有11个数字
+	int count[number]; //存放10-20各出现次数的数组
+
+	for (int a = 0; a < number; a++) {
+		count[a] = 0;
+	}
+
+	printf("输入数字，-1代表结束： \n");
+	scanf_s("%d", &x);
+
+	while (x != -1)
+	{
+		if (x>=10&&x<=20) {
+			count[x-10]++;
+		}
+		scanf_s("%d", &x);
+	}
+
+	for (int i = 0;i<number;i++) {
+		printf("%d出现了%d次 \n", i+10, count[i]);
+	}
+
+	return 0;
+}

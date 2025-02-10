@@ -1,0 +1,35 @@
+求输入的数的平均值，并输出其中比平均值大的
+
+#include <stdio.h>
+
+int main() {
+
+	int x=0; //输入的数
+	int put_num= 0; //输入的个数
+	float sum = 0; //输入的总值
+	float ave_num=0; //平均值
+	int x_value[100] = {0}; //存放输入的值的数组
+
+	printf("输入数字，-1代表结束： \n");
+	scanf_s("%d", &x);
+
+	while (x!=-1)
+	{
+		x_value[put_num] = x;
+		sum += x;
+		put_num++;
+		scanf_s("%d", &x);
+	}
+
+	ave_num = sum/put_num;
+	printf("\n平均值为：%f", ave_num);
+	printf("\n超过平均值的数为：");
+
+	for (int i=0;i<put_num;i++) {
+		if (x_value[i]> ave_num) {
+			printf("%d ", x_value[i]);
+		}
+	}
+
+	return 0;
+}

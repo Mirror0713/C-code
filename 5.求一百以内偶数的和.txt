@@ -1,0 +1,17 @@
+题干：求一百以内偶数的和。
+
+#include <stdio.h>
+
+int main() {
+	int n=2;
+	int sum = 0;
+
+	while (n<=100) {
+		sum = sum + n;
+		n = n + 2;
+	}
+	
+	printf("一百以内偶数的和为：%d",sum);
+
+	return 0;
+}

@@ -1,0 +1,37 @@
+如何用1角、2角和5角的硬币凑出10元以下的金额,给出5种方案。
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+	int one,two,five; //一角两角五角的个数
+	int TotalValue; //总金额（元）
+	int Plan = 0; //目前多少种方案了
+	int exit = 0; //是否跳出循环
+
+	printf("请输入需要凑的金额（元）：");
+	scanf_s("%d",&TotalValue);
+
+	for (one =1; one < TotalValue*10 /1; one++) {
+		for (two = 1; two < TotalValue * 10 / 2; two++) {
+			for (five = 1; five < TotalValue * 10 / 5; five++) {
+				if (one * 1 + two * 2 + five * 5 == TotalValue * 10)
+				{
+					Plan++;
+					if (Plan <= 5) {
+						printf("可以用%d个1角、%d个2角、%d个5角拼出%d元\n", one, two, five, TotalValue);
+					}
+					else {
+						exit = 1;
+					}
+				}
+				if (exit) break;
+			}
+			if (exit) break;
+		}
+		if (exit) break;
+	}
+
+	return 0;
+}

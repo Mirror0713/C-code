@@ -1,0 +1,28 @@
+写一个程序，输入数量不确定的[0,9]范围内的整数，统计每一种数字出现的次数，输入-1表示结束。
+
+#include <stdio.h>
+int divide(int a, int b, int* c);
+
+int main(void) {
+	int a = 9, b = 2; //被除数和除数
+	int c; //整除的值
+	int result = 0; //整除结果，如果是0就是失败，1就是成功
+
+	result = divide(a, b, &c);
+
+	if (result==1) {
+		printf("能够整除：%d/%d=%d", a, b, c);
+	}else
+	{
+		printf("%d不能整除%d。", a, b);
+	}
+
+	return 0;
+}
+
+int divide(int a, int b, int* c){
+	if (b != 0 && a%b == 0) {
+		*c = a/b;
+		return 1;
+	}
+}

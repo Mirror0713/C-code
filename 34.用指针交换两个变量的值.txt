@@ -1,0 +1,23 @@
+写一个程序，输入数量不确定的[0,9]范围内的整数，统计每一种数字出现的次数，输入-1表示结束。
+
+#include <stdio.h>
+void ChangeValue(int* pa, int* pb);
+
+int main(void) {
+
+	int x = 1, y = 2; //变量
+	int* a = &x; //指针a指向x
+	int* b = &y; //指针b指向y
+
+	printf("x=%d,y=%d\n",x,y);
+	ChangeValue(a,b);
+	printf("更改后：x=%d,y=%d", x, y);
+
+	return 0;
+}
+
+void ChangeValue(int* pa, int* pb){
+	int c = *pa; //设置一个中间值
+	*pa = *pb;
+	*pb = c;
+}

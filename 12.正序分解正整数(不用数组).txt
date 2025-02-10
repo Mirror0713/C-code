@@ -1,0 +1,32 @@
+正序分解正整数
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+	int n; //输入的正整数
+	int x=1; //多少位数
+	int OutNumber; //存放值
+
+	printf("输入一个正整数：");
+	scanf_s("%d", &n);
+
+	for (int i=0;;i++) {
+		if (((int)pow(10,i)<=n)&&(n<(int)pow(10,i+1))) {
+			x = i+1;
+			break;
+		}
+	}
+	printf("它是%d位数\n",x);
+
+	for (int j=1;j<=x;j++) {
+
+		OutNumber = (n/(int)pow(10,x-j))-((n/((int)pow(10,x-j+1))) *10);
+
+		printf("%d \n", OutNumber);
+
+	}
+	printf("输入一个正整数：");
+	return 0;
+}

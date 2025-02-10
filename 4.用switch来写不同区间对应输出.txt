@@ -1,0 +1,58 @@
+题干：运输公司对用户计算运输费用。路程(s km)越远每吨·千米运费越低。标准如下:
+s<250，没有折扣；
+250≤s<500，2%折扣；
+500≤s<1000，5%折扣；
+1000≤s<2000，8%折扣；
+2000≤s<3000，10%折扣；
+3000≤s，15%折扣。
+输入路程数，查看相应折扣（用switch来写）。
+
+#include <stdio.h>
+
+int main() {
+	int CountO,DistanceI; //CountO是计算的中间值
+	float PriceI,WeightI,PayO, DiscountO; //DiscountO是折扣数
+	
+	printf("输入既定每吨每千米的价钱，路程(km，需要整数)，吨数：");
+
+	scanf_s("%f %d %f",&PriceI,&DistanceI,&WeightI);
+
+	CountO = DistanceI / 250;
+
+	switch (CountO) {
+		case 0: 
+			DiscountO = 0;
+			break;
+		case 1: 
+			DiscountO = 2;
+			break;
+		case 2:
+		case 3:
+			DiscountO = 5;
+			break;
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+			DiscountO = 8;
+			break;
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+			DiscountO = 10;
+			break;
+		case 12:
+			DiscountO = 15;
+			break;
+		default:
+			DiscountO = 15;
+	}
+
+	PayO = PriceI* DistanceI * WeightI* (1 - DiscountO / 100.0);
+
+	printf("\n折扣为%.0f%%,总共需花费%g元",DiscountO,PayO);
+
+	return 0;
+}
+

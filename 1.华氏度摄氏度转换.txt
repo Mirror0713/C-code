@@ -1,0 +1,12 @@
+题干：输入华氏温度f，输出对应的摄氏温度c，保留三位小数(提示:c=5/9*(f-32))
+
+#include <stdio.h>
+
+int main() {
+	double TemperatureI, TemperatureO; //输入华氏温度I，输出摄氏温度O
+	printf("华氏温度是：");
+	scanf_s("%lf",&TemperatureI);
+	TemperatureO = (5.0 / 9) * (TemperatureI - 32);
+	printf("摄氏温度是：%.3lf",TemperatureO); //注意这里不用%TemperatureO
+	return 0;
+}
